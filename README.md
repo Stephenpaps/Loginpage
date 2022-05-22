@@ -1,4 +1,4 @@
 LOGIN PAGE
 
 
-Created a Register and Login page usinf Sqlite Browser Database.
+Created a Register and Login page using Sqlite Browser Database.
