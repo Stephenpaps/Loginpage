@@ -1,6 +1,6 @@
 from tkinter import *
 import tkinter.messagebox as tkMessageBox
-import sqlite3 as sql
+import sqlite3
 
 root = Tk()
 root.title("Welcome to Stephen's World !")
@@ -14,14 +14,11 @@ y = (screen_height / 2) - (height / 2)
 root.geometry("%dx%d+%d+%d" % (width, height, x, y))
 root.resizable(0, 0)
 
-
 def Database():
     global conn, cursor
-conn = sql.connect("db_register.db")
-cursor = conn.cursor()
-statement = "SELECT username, password FROM users"
-cursor.execute(statement)
-print(cursor.fetchall())
+    conn = sqlite3.connect("db_register.db")
+    cursor = conn.cursor()
+    cursor.execute("CREATE TABLE IF NOT EXISTS `member` (mem_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT, password TEXT, firstname TEXT, lastname TEXT)")
 
 
 #=======================================VARIABLES=====================================
